@@ -32,12 +32,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpHeight = 1.5f;
     [SerializeField] float gravity = -9.81f;
 
-    [Header("Step Climb")]
-    [SerializeField] GameObject stepRayUpper;
-    [SerializeField] GameObject stepRayLower;
-    [SerializeField] float stepHeight;
-    [SerializeField] float stepSmooth;
-
 
     public void Awake()
     {
@@ -53,7 +47,6 @@ public class PlayerMovement : MonoBehaviour
         // Handle all movement
         HandleMovement();
         HandleRotation();
-        HandleStepClimb();
     }
 
     private void HandleMovement()
@@ -129,46 +122,5 @@ public class PlayerMovement : MonoBehaviour
 
         // Apply the final rotation to the player's transform
         transform.rotation = playerRotation;
-    }
-
-    private void HandleStepClimb()
-    {
-        // Check for step climbing using raycasts
-
-        // Check the lower step raycast
-        RaycastHit hitLower;
-        if(Physics.Raycast(stepRayLower.transform.position, transform.TransformDirection(Vector3.forward), out hitLower, 0.3f))
-        {
-            // Check the upper step raycast
-            RaycastHit hitUpper;
-            if (!Physics.Raycast(stepRayUpper.transform.position, transform.TransformDirection(Vector3.forward), out hitUpper, 0.5f))
-            {
-                // Move the player downward to simulate step climbing
-                playerRigidbody.position -= new Vector3(0f, -stepSmooth * Time.deltaTime, 0f);
-            }
-        }
-
-        // Check the lower 45-degree step raycast
-        RaycastHit hitLower45;
-        if (Physics.Raycast(stepRayLower.transform.position, transform.TransformDirection(1.5f,0,1), out hitLower45, 0.3f))
-        {
-            // Check the upper 45-degree step raycast
-            RaycastHit hitUpper45;
-            if (!Physics.Raycast(stepRayUpper.transform.position, transform.TransformDirection(1.5f, 0, 1), out hitUpper45, 0.5f))
-            {
-                playerRigidbody.position -= new Vector3(0f, -stepSmooth * Time.deltaTime, 0f);
-            }
-        }
-        // Check the lower -45-degree step raycast
-        RaycastHit hitLowerM45;
-        if (Physics.Raycast(stepRayLower.transform.position, transform.TransformDirection(-1.5f, 0, 1), out hitLowerM45, 0.3f))
-        {
-            // Check the upper -45-degree step raycast
-            RaycastHit hitUpperM45;
-            if (!Physics.Raycast(stepRayUpper.transform.position, transform.TransformDirection(-1.5f, 0, 1), out hitUpperM45, 0.5f))
-            {
-                playerRigidbody.position -= new Vector3(0f, -stepSmooth * Time.deltaTime, 0f);
-            }
-        }
     }
 }

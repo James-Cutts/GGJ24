@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    Animator animator;
+   // Animator animator;
     InputManager inputManager;
     PlayerMovement playerMovement;
     CameraManager cameraManager;
@@ -14,7 +14,7 @@ public class PlayerManager : MonoBehaviour
         inputManager = GetComponent<InputManager>();
         cameraManager = FindObjectOfType<CameraManager>();
         playerMovement = GetComponent<PlayerMovement>();
-        animator = GetComponentInChildren<Animator>();
+       // animator = GetComponentInChildren<Animator>();
         Cursor.visible = false;
     }
 

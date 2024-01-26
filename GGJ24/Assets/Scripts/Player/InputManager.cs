@@ -6,7 +6,7 @@ public class InputManager : MonoBehaviour
 {
     PlayerControls playerControls;
     PlayerMovement playerMovement;
-    AnimManager animManager;
+   // AnimManager animManager;
 
     public Vector2 movementInput;
     public Vector2 cameraInput;
@@ -24,14 +24,12 @@ public class InputManager : MonoBehaviour
     [Header("Other Inputs")]
     public bool sprintInput;
     public bool jumpInput;
-    public bool invInput;
-    public bool menuInput;
     public bool interactInput;
 
 
     private void Awake()
     {
-        animManager = GetComponent<AnimManager>();
+       // animManager = GetComponent<AnimManager>();
         playerMovement = GetComponent<PlayerMovement>();
     }
     private void OnEnable()
@@ -54,10 +52,6 @@ public class InputManager : MonoBehaviour
 
             playerControls.Gameplay.Interact.performed += i => interactInput = true;
             playerControls.Gameplay.Interact.canceled += i => interactInput = false;
-
-            playerControls.Gameplay.Inventory.performed += i => invInput = true;
-
-            playerControls.Gameplay.Menu.performed += i => menuInput = true;
 
         }
 
@@ -83,7 +77,7 @@ public class InputManager : MonoBehaviour
         cameraInputX = cameraInput.x;
 
         moveAmount = Mathf.Clamp01(Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
-        animManager.UpdateAnimatorValues(0, moveAmount, playerMovement.isSprinting);
+        //animManager.UpdateAnimatorValues(0, moveAmount, playerMovement.isSprinting);
 
         if (moveAmount <= 0)
         {
