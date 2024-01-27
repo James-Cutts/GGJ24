@@ -12,7 +12,7 @@ public class CircularTerrainGenerator : MonoBehaviour
 
     void Start()
     {
-        RandomizeHeightCurve();
+        //RandomizeHeightCurve();
 
         GenerateTerrain();
     }
