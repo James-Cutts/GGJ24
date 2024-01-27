@@ -56,11 +56,14 @@ public class PlayerMovement : MonoBehaviour
         TickleEv = FMODUnity.RuntimeManager.CreateInstance(tickle);
         FootstepEv = FMODUnity.RuntimeManager.CreateInstance(footstep);
 
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 0); //idle
+
     }
 
     private void Update()
     {
         GameObject[] npcs = GameObject.FindGameObjectsWithTag("NPC");
+        GameObject[] npcsFemale = GameObject.FindGameObjectsWithTag("NPCFemale");
 
         foreach (var npc in npcs)
         {
@@ -69,6 +72,19 @@ public class PlayerMovement : MonoBehaviour
                 if (isTickling)
                 {
                     Destroy(npc);
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chase
+                }
+            }
+        }
+        foreach (var npcFemale in npcsFemale)
+        {
+            if (Vector3.Distance(transform.position, npcFemale.transform.position) < +detectionRange)
+            {
+                if (isTickling)
+                {
+                    Destroy(npcFemale);
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chase
+
                 }
             }
         }
@@ -99,7 +115,6 @@ public class PlayerMovement : MonoBehaviour
             // Apply the appropriate movement speed based on sprinting and input amount
             if (isSprinting)
             {
-                Debug.Log("Sprinting");
                 moveDirection = moveDirection * sprintSpeed;
             }
             else
@@ -107,7 +122,6 @@ public class PlayerMovement : MonoBehaviour
 
                 if (inputManager.moveAmount >= 0.5f)
                 {
-                    Debug.Log("Running");
                     moveDirection = moveDirection * runningSpeed;
 
                 }

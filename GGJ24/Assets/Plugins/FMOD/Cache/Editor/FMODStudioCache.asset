@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/Audio/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638419779007300000
+  lastModified: 638419848779727577
   FileSizes: []
   Exists: 1
 --- !u!114 &-8586768440746650789
@@ -87,10 +87,10 @@ MonoBehaviour:
   Path: Assets/Audio/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638419779007300000
+  lastModified: 638419848779758990
   FileSizes:
   - Name: 
-    Value: 1492
+    Value: 1662
   Exists: 1
 --- !u!114 &-7572632235868401837
 MonoBehaviour:
@@ -113,7 +113,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -8858282195153995821}
   IsStream: 1
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
@@ -173,6 +173,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1860
+--- !u!114 &-2527564352815400322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Characters/Manly_man/Manly_Chatter 2
+  m_EditorClassIdentifier: 
+  Path: event:/Characters/Manly_man/Manly_Chatter 2
+  Guid:
+    Data1: 343091311
+    Data2: 1334623052
+    Data3: -1673869947
+    Data4: 58721547
+  Banks:
+  - {fileID: -8858282195153995821}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4429
 --- !u!114 &-1316199857304705836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,6 +224,33 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-1156029164840226365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Characters/Woman_base/Woman_Tickle
+  m_EditorClassIdentifier: 
+  Path: event:/Characters/Woman_base/Woman_Tickle
+  Guid:
+    Data1: -1023902016
+    Data2: 1150998142
+    Data3: 593487028
+    Data4: -1481125678
+  Banks:
+  - {fileID: -8858282195153995821}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 515
 --- !u!114 &-550345308123111339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,7 +295,6 @@ MonoBehaviour:
   - {fileID: -8586768440746650789}
   - {fileID: 7469387907528198803}
   - {fileID: 5046439020804589818}
-  - {fileID: 5610835177491275605}
   - {fileID: 7209646253278012147}
   - {fileID: -8990297654222446792}
   - {fileID: 1957029555777398496}
@@ -249,6 +302,11 @@ MonoBehaviour:
   - {fileID: -7572632235868401837}
   - {fileID: -2903641853294502743}
   - {fileID: -7123228643985539391}
+  - {fileID: 3746846080058294635}
+  - {fileID: -2527564352815400322}
+  - {fileID: 4683406996822547853}
+  - {fileID: 6677306944761581148}
+  - {fileID: -1156029164840226365}
   EditorParameters:
   - {fileID: 6441395032600634251}
   - {fileID: -550345308123111339}
@@ -256,7 +314,7 @@ MonoBehaviour:
   - {fileID: -8858282195153995821}
   StringsBanks:
   - {fileID: -7907144728338926290}
-  cacheTime: 638419779007300000
+  cacheTime: 638419848779758990
   cacheVersion: 131616
 --- !u!114 &971423771914294993
 MonoBehaviour:
@@ -339,7 +397,61 @@ MonoBehaviour:
   - {fileID: 5231664195001522328}
   MinDistance: 1
   MaxDistance: 20
-  Length: 3125
+  Length: 3000
+--- !u!114 &3746846080058294635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Characters/Man_base/Man_Scream
+  m_EditorClassIdentifier: 
+  Path: event:/Characters/Man_base/Man_Scream
+  Guid:
+    Data1: 1908402447
+    Data2: 1302167646
+    Data3: -531683191
+    Data4: -853271107
+  Banks:
+  - {fileID: -8858282195153995821}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2458
+--- !u!114 &4683406996822547853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Characters/Woman_base/Woman_scream
+  m_EditorClassIdentifier: 
+  Path: event:/Characters/Woman_base/Woman_scream
+  Guid:
+    Data1: -1560839263
+    Data2: 1090005210
+    Data3: 1839207074
+    Data4: -23897132
+  Banks:
+  - {fileID: -8858282195153995821}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 12198
 --- !u!114 &5046439020804589818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,33 +503,6 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &5610835177491275605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Characters/Manly man/Manly_Chatter 2
-  m_EditorClassIdentifier: 
-  Path: event:/Characters/Manly man/Manly_Chatter 2
-  Guid:
-    Data1: 343091311
-    Data2: 1334623052
-    Data3: -1673869947
-    Data4: 58721547
-  Banks:
-  - {fileID: -8858282195153995821}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 4429
 --- !u!114 &6441395032600634251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,6 +527,33 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &6677306944761581148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Characters/Man_base/Man_Tickle
+  m_EditorClassIdentifier: 
+  Path: event:/Characters/Man_base/Man_Tickle
+  Guid:
+    Data1: 939288500
+    Data2: 1111849225
+    Data3: -1301153907
+    Data4: -96337788
+  Banks:
+  - {fileID: -8858282195153995821}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8150
 --- !u!114 &7209646253278012147
 MonoBehaviour:
   m_ObjectHideFlags: 0

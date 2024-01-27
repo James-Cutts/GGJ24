@@ -17,11 +17,22 @@ public class AI_Behaviour : MonoBehaviour
 
     public float sightRange;
     public bool playerInSightRange;
+    int screamCounter = 0;
+    bool scream = false;
+
+
+    public string screamMale = "event:/Characters/Woman_base/Woman_scream";
+    public string screamFemale = "event:/Characters/Man_base/Man_Scream";
+
+    FMOD.Studio.EventInstance MaleScreamEv;
+    FMOD.Studio.EventInstance FemaleScreamEv;
 
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        MaleScreamEv = FMODUnity.RuntimeManager.CreateInstance(screamMale);
+        FemaleScreamEv = FMODUnity.RuntimeManager.CreateInstance(screamFemale);
     }
     private void Update()
     {
@@ -34,6 +45,7 @@ public class AI_Behaviour : MonoBehaviour
         if(playerInSightRange)
         {
             Fleeing();
+            scream = true;
         }
     }
     private void Patrolling()
@@ -52,7 +64,7 @@ public class AI_Behaviour : MonoBehaviour
         {
             walkPointSet = false;
         }
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 0); //idle
+        
     }
 
     private void SearchWalkPoint()
@@ -78,15 +90,26 @@ public class AI_Behaviour : MonoBehaviour
     }
     private void Fleeing()
     {
-        if(Vector3.Distance(transform.position, player.position) < fleeDistance)
+       
+
+        if (Vector3.Distance(transform.position, player.position) < fleeDistance)
         {
             Vector3 fleeDirection = transform.position - player.position;
             Vector3 fleeDestination = transform.position + fleeDirection.normalized * fleeDistance;
 
             agent.SetDestination(fleeDestination);
 
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1);
         }
-        
+
+        if (this.gameObject.tag == "NPCFemale")
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/Woman_base/Woman_scream", this.transform.position);
+
+        }
+        else
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/Man_base/Man_Scream", this.transform.position);
+      
+        }
     }
 }
