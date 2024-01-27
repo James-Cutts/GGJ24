@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TerrainGenerator : MonoBehaviour
+public class CircularTerrainGenerator : MonoBehaviour
 {
     public int terrainSize = 100;
     public float scale = 1f;
@@ -53,15 +53,19 @@ public class TerrainGenerator : MonoBehaviour
     float[,] GenerateHeights(int resolution)
     {
         float[,] heights = new float[resolution, resolution];
+        float center = resolution / 2f;
 
         for (int x = 0; x < resolution; x++)
         {
             for (int z = 0; z < resolution; z++)
             {
+                float distanceToCenter = Vector2.Distance(new Vector2(x, z), new Vector2(center, center));
+                float normalizedDistance = distanceToCenter / center;
+
                 float xCoord = (float)x / resolution * scale;
                 float zCoord = (float)z / resolution * scale;
 
-                float height = CalculateTerrainHeight(xCoord, zCoord);
+                float height = CalculateTerrainHeight(xCoord, zCoord) * Mathf.Lerp(1f, 0f, normalizedDistance);
                 heights[x, z] = height;
             }
         }
