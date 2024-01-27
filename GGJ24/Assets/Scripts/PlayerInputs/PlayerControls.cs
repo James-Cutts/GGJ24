@@ -73,16 +73,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Inventory"",
-                    ""type"": ""Button"",
-                    ""id"": ""9aa26d09-05cc-407d-af02-d6b917e5ec06"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Interact"",
+                    ""name"": ""Tickle"",
                     ""type"": ""Button"",
                     ""id"": ""527b00f8-db25-47d6-9918-e00437f63d01"",
                     ""expectedControlType"": ""Button"",
@@ -334,45 +325,23 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""243a8a69-5b31-49a1-96c6-01bb2c1e5c08"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Inventory"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a10427bf-c667-436e-901a-d2c4a2d167be"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Inventory"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""aa11c6c0-a782-4c68-85a3-b76b0a7c58ad"",
-                    ""path"": ""<Keyboard>/f"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Interact"",
+                    ""action"": ""Tickle"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""7c76024d-441f-4426-a8b8-f13214bf61d8"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Interact"",
+                    ""action"": ""Tickle"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -410,8 +379,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Gameplay_Sprint = m_Gameplay.FindAction("Sprint", throwIfNotFound: true);
         m_Gameplay_Zoom = m_Gameplay.FindAction("Zoom", throwIfNotFound: true);
         m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
-        m_Gameplay_Inventory = m_Gameplay.FindAction("Inventory", throwIfNotFound: true);
-        m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
+        m_Gameplay_Tickle = m_Gameplay.FindAction("Tickle", throwIfNotFound: true);
         m_Gameplay_Menu = m_Gameplay.FindAction("Menu", throwIfNotFound: true);
     }
 
@@ -479,8 +447,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Sprint;
     private readonly InputAction m_Gameplay_Zoom;
     private readonly InputAction m_Gameplay_Jump;
-    private readonly InputAction m_Gameplay_Inventory;
-    private readonly InputAction m_Gameplay_Interact;
+    private readonly InputAction m_Gameplay_Tickle;
     private readonly InputAction m_Gameplay_Menu;
     public struct GameplayActions
     {
@@ -491,8 +458,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Sprint => m_Wrapper.m_Gameplay_Sprint;
         public InputAction @Zoom => m_Wrapper.m_Gameplay_Zoom;
         public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
-        public InputAction @Inventory => m_Wrapper.m_Gameplay_Inventory;
-        public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
+        public InputAction @Tickle => m_Wrapper.m_Gameplay_Tickle;
         public InputAction @Menu => m_Wrapper.m_Gameplay_Menu;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
@@ -518,12 +484,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
-            @Inventory.started += instance.OnInventory;
-            @Inventory.performed += instance.OnInventory;
-            @Inventory.canceled += instance.OnInventory;
-            @Interact.started += instance.OnInteract;
-            @Interact.performed += instance.OnInteract;
-            @Interact.canceled += instance.OnInteract;
+            @Tickle.started += instance.OnTickle;
+            @Tickle.performed += instance.OnTickle;
+            @Tickle.canceled += instance.OnTickle;
             @Menu.started += instance.OnMenu;
             @Menu.performed += instance.OnMenu;
             @Menu.canceled += instance.OnMenu;
@@ -546,12 +509,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
-            @Inventory.started -= instance.OnInventory;
-            @Inventory.performed -= instance.OnInventory;
-            @Inventory.canceled -= instance.OnInventory;
-            @Interact.started -= instance.OnInteract;
-            @Interact.performed -= instance.OnInteract;
-            @Interact.canceled -= instance.OnInteract;
+            @Tickle.started -= instance.OnTickle;
+            @Tickle.performed -= instance.OnTickle;
+            @Tickle.canceled -= instance.OnTickle;
             @Menu.started -= instance.OnMenu;
             @Menu.performed -= instance.OnMenu;
             @Menu.canceled -= instance.OnMenu;
@@ -579,8 +539,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnSprint(InputAction.CallbackContext context);
         void OnZoom(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnInventory(InputAction.CallbackContext context);
-        void OnInteract(InputAction.CallbackContext context);
+        void OnTickle(InputAction.CallbackContext context);
         void OnMenu(InputAction.CallbackContext context);
     }
 }

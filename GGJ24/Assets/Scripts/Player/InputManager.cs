@@ -6,7 +6,7 @@ public class InputManager : MonoBehaviour
 {
     PlayerControls playerControls;
     PlayerMovement playerMovement;
-   // AnimManager animManager;
+    AnimManager animManager;
 
     public Vector2 movementInput;
     public Vector2 cameraInput;
@@ -24,12 +24,12 @@ public class InputManager : MonoBehaviour
     [Header("Other Inputs")]
     public bool sprintInput;
     public bool jumpInput;
-    public bool interactInput;
+    public bool tickleInput;
 
 
     private void Awake()
     {
-       // animManager = GetComponent<AnimManager>();
+        animManager = GetComponent<AnimManager>();
         playerMovement = GetComponent<PlayerMovement>();
     }
     private void OnEnable()
@@ -50,8 +50,8 @@ public class InputManager : MonoBehaviour
             playerControls.Gameplay.Sprint.performed += i => sprintInput = true;
             playerControls.Gameplay.Sprint.canceled += i => sprintInput = false;
 
-            playerControls.Gameplay.Interact.performed += i => interactInput = true;
-            playerControls.Gameplay.Interact.canceled += i => interactInput = false;
+            playerControls.Gameplay.Tickle.performed += i => tickleInput = true;
+            playerControls.Gameplay.Tickle.canceled += i => tickleInput = false;
 
         }
 
@@ -67,6 +67,7 @@ public class InputManager : MonoBehaviour
         HandleMovementInput();
         HandleSprintingInput();
         HandleJumpInput();
+        HandleTickleInput();
     }
     private void HandleMovementInput()
     {
@@ -77,7 +78,7 @@ public class InputManager : MonoBehaviour
         cameraInputX = cameraInput.x;
 
         moveAmount = Mathf.Clamp01(Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
-        //animManager.UpdateAnimatorValues(0, moveAmount, playerMovement.isSprinting);
+        animManager.UpdateAnimatorValues(0, moveAmount, playerMovement.isSprinting);
 
         if (moveAmount <= 0)
         {
@@ -109,6 +110,19 @@ public class InputManager : MonoBehaviour
         else if (playerMovement.isGrounded)
         {
             playerMovement.isJumping = false;
+        }
+    }
+
+    private void HandleTickleInput()
+    {
+        if (tickleInput)
+        {
+            playerMovement.isTickling = true;
+            animManager.PlayTickleAnimation();
+        }
+        else
+        {
+            playerMovement.isTickling = false;
         }
     }
 }
