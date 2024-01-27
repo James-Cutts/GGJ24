@@ -45,7 +45,7 @@ public class MusicController : MonoBehaviour
 
     public void RestartEvents()
     {
-        Debug.Log("Release");
+        //Debug.Log("Release");
         AtmosEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         AtmosEv.release();
         //AmbientEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
@@ -61,7 +61,6 @@ public class MusicController : MonoBehaviour
     {
         playerDistance = Vector3.Distance(player.position, this.transform.position);
         playerDistance = playerDistance / 100;
-        Debug.Log(playerDistance);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("WavesLvl", playerDistance);
     }
 }

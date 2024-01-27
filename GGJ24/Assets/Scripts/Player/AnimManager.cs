@@ -84,5 +84,6 @@ public class AnimManager : MonoBehaviour
     {
         // Trigger tickle animation
         animator.SetTrigger(tickleTrigger);
+        
     }
 }

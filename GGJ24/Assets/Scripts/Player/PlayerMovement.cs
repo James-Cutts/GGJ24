@@ -33,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpHeight;
     [SerializeField] float gravity = -9.81f;
 
+    public string tickle = "event:/Player/Tickle";
+    FMOD.Studio.EventInstance TickleEv;
 
     public void Awake()
     {
@@ -40,6 +42,9 @@ public class PlayerMovement : MonoBehaviour
         inputManager = GetComponent<InputManager>();
         playerRigidbody = GetComponent<Rigidbody>();
         cameraObject = Camera.main.transform;
+
+        TickleEv = FMODUnity.RuntimeManager.CreateInstance(tickle);
+
 
     }
 
@@ -110,9 +115,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleTickleInput()
     {
+        
         if (isTickling)
         {
-
+            //FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Tickle", this.transform.position);
+            TickleEv.start();
+            Debug.Log("Tickle");
+        }
+        else
+        {
+           //TickleEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
     }
 }
