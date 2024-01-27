@@ -177,10 +177,10 @@ MonoBehaviour:
   player: {fileID: 0}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   fleeDistance: 5
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 10
