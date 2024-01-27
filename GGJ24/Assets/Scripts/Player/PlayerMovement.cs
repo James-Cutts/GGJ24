@@ -2,9 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public GameObject[] npcs;
+    public float detectionRange = 10f;
+    public bool inRange;
+
     Rigidbody playerRigidbody;
 
     InputManager inputManager;
@@ -34,13 +39,30 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float gravity = -9.81f;
 
 
+
+
     public void Awake()
     {
         // Get the required components and references
         inputManager = GetComponent<InputManager>();
         playerRigidbody = GetComponent<Rigidbody>();
         cameraObject = Camera.main.transform;
+    }
 
+    private void Update()
+    {
+        GameObject[] npcs = GameObject.FindGameObjectsWithTag("NPC");
+
+        foreach (var npc in npcs)
+        {
+            if (Vector3.Distance(transform.position, npc.transform.position) < +detectionRange)
+            {
+                if (isTickling)
+                {
+                    Destroy(npc);
+                }
+            }
+        }
     }
 
     public void HandleAllMovement()
@@ -48,7 +70,6 @@ public class PlayerMovement : MonoBehaviour
         // Handle all movement
         HandleMovement();
         HandleRotation();
-        HandleTickleInput();
     }
 
     private void HandleMovement()
@@ -108,11 +129,4 @@ public class PlayerMovement : MonoBehaviour
         transform.Rotate(Vector3.up, rotationAngle);
     }
 
-    private void HandleTickleInput()
-    {
-        if (isTickling)
-        {
-
-        }
-    }
 }
