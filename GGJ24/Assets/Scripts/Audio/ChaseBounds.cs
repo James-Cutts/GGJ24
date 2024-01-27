@@ -25,6 +25,7 @@ public class ChaseBounds : MonoBehaviour
             }
             else
             {
+
                 FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 0); //idle
 
             }
@@ -42,5 +43,15 @@ public class ChaseBounds : MonoBehaviour
 
             }
         }
+
+
+    }
+
+    IEnumerator MusicTimer()
+    {
+        
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
+
     }
 }

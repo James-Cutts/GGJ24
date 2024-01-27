@@ -40,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
 
 
 
+
+
     //Sound
     public string tickle = "event:/Player/Tickle";
     public string footstep = "event:/Player/Footsteps";
@@ -74,7 +76,10 @@ public class PlayerMovement : MonoBehaviour
                 {
                     Destroy(npc);
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chase
+                   
+                    
                 }
+
             }
         }
         foreach (var npcFemale in npcsFemale)
@@ -85,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     Destroy(npcFemale);
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chasee
+                    
                     
                 }
             }
