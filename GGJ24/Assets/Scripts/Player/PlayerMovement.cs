@@ -33,8 +33,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpHeight;
     [SerializeField] float gravity = -9.81f;
 
+
+    //Sound
     public string tickle = "event:/Player/Tickle";
+    public string footstep = "event:/Player/Footsteps";
+
     FMOD.Studio.EventInstance TickleEv;
+    FMOD.Studio.EventInstance FootstepEv;
 
     public void Awake()
     {
@@ -44,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         cameraObject = Camera.main.transform;
 
         TickleEv = FMODUnity.RuntimeManager.CreateInstance(tickle);
-
+        FootstepEv = FMODUnity.RuntimeManager.CreateInstance(footstep);
 
     }
 
@@ -58,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleMovement()
     {
+
         // Check if the player is grounded
         isGrounded = Physics.CheckSphere(transform.position, groundCheckDistance, groundMask);
 
@@ -72,17 +78,24 @@ public class PlayerMovement : MonoBehaviour
             // Apply the appropriate movement speed based on sprinting and input amount
             if (isSprinting)
             {
+                Debug.Log("Sprinting");
                 moveDirection = moveDirection * sprintSpeed;
             }
             else
             {
+
                 if (inputManager.moveAmount >= 0.5f)
                 {
+                    Debug.Log("Running");
                     moveDirection = moveDirection * runningSpeed;
+
                 }
                 else
                 {
+                    FootstepEv.start();
                     moveDirection = moveDirection * walkingSpeed;
+                    //FootstepEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
                 }
             }
 
@@ -115,7 +128,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleTickleInput()
     {
-        
+
         if (isTickling)
         {
             //FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Tickle", this.transform.position);
@@ -124,7 +137,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-           //TickleEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            //TickleEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
     }
 }
