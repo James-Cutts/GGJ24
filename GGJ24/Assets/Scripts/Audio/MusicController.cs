@@ -21,7 +21,7 @@ public class MusicController : MonoBehaviour
     //FMOD.Studio.EventInstance RunEv;
     //FMOD.Studio.EventInstance BreaksEv;
 
-    public int chaseState = 0;
+    //public int chaseState = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -65,6 +65,6 @@ public class MusicController : MonoBehaviour
         playerDistance = Vector3.Distance(player.position, this.transform.position);
         playerDistance = playerDistance / 100;
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("WavesLvl", playerDistance);
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", chaseState);
+        
     }
 }
