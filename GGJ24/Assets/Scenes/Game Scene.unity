@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028353, g: 0.22571383, b: 0.30692253, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -457,6 +457,7 @@ GameObject:
   - component: {fileID: 528877173}
   - component: {fileID: 528877172}
   - component: {fileID: 528877171}
+  - component: {fileID: 528877175}
   m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
@@ -545,12 +546,28 @@ Transform:
   m_GameObject: {fileID: 528877170}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 4.5, z: -0.8}
-  m_LocalScale: {x: 9, y: 1, z: 9}
+  m_LocalPosition: {x: 75.2, y: 5.2, z: 58}
+  m_LocalScale: {x: 25, y: 1, z: 25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &528877175
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528877170}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 5, y: 0.5, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.4, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!4 &990236291 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 578376449398627443, guid: 6dc4cf4496348884d8ee27743ae38562,
@@ -1223,14 +1240,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrainSize: 200
-  scale: 2
-  terrainHeightMultiplier: 13
+  scale: 2.1
+  terrainHeightMultiplier: 17
   heightCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
+      time: 0.31666183
+      value: 0.29953003
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1238,8 +1255,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.8583374
-      value: 0.45991135
+      time: 0.60417175
+      value: 0.4787712
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1249,9 +1266,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  iterations: 8
+  iterations: 6
   variation: 2
-  roughness: 0.44
+  roughness: 0.45
 --- !u!154 &2138396289
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -1416,6 +1433,8 @@ MonoBehaviour:
   rotationSpeed: 50
   jumpHeight: 0.5
   gravity: -9.81
+  tickle: event:/Player/Tickle
+  footstep: event:/Player/Footsteps
 --- !u!4 &5494620546763190123
 Transform:
   m_ObjectHideFlags: 0
