@@ -56,7 +56,7 @@ public class AI_Behaviour : MonoBehaviour
         {
             walkPointSet = false;
         }
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 0); //idle
+        
     }
 
     private void SearchWalkPoint()

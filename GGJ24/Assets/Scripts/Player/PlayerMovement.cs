@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
         TickleEv = FMODUnity.RuntimeManager.CreateInstance(tickle);
         FootstepEv = FMODUnity.RuntimeManager.CreateInstance(footstep);
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 0);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 0); 
         //idle
 
     }
@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
                 if (isTickling)
                 {
                     Destroy(npc);
-                    //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chase
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chase
                 }
             }
         }
@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
                 if (isTickling)
                 {
                     Destroy(npcFemale);
-                    //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chase
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chasee
                     
                 }
             }

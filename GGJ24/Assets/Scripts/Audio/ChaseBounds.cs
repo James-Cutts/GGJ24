@@ -21,7 +21,7 @@ public class ChaseBounds : MonoBehaviour
             if (Vector3.Distance(transform.position, npc.transform.position) < 30)
             {
 
-                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chase
+                
             }
             else
             {
@@ -34,7 +34,7 @@ public class ChaseBounds : MonoBehaviour
             if (Vector3.Distance(transform.position, npcFemale.transform.position) < 30)
             {
 
-                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chase
+                
             }
             else
             {
