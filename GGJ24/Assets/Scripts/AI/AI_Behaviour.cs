@@ -9,6 +9,8 @@ public class AI_Behaviour : MonoBehaviour
     public Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
 
+    Animator aiAnimator;
+
     public float fleeDistance;
 
     public Vector3 walkPoint;
@@ -20,6 +22,7 @@ public class AI_Behaviour : MonoBehaviour
 
     private void Awake()
     {
+        aiAnimator = GetComponentInChildren<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
@@ -45,10 +48,11 @@ public class AI_Behaviour : MonoBehaviour
         if(walkPointSet)
         {
             agent.SetDestination(walkPoint);
+            aiAnimator.SetBool("isRunning", true);
         }
         Vector3 distanceToWalk = transform.position - walkPoint;
 
-        if(distanceToWalk.magnitude < 1f)
+        if(distanceToWalk.magnitude <= 0.1f)
         {
             walkPointSet = false;
         }
@@ -73,20 +77,41 @@ public class AI_Behaviour : MonoBehaviour
             walkPoint = hit.point;
             walkPointSet = true;
         }
-
-
     }
     private void Fleeing()
     {
-        if(Vector3.Distance(transform.position, player.position) < fleeDistance)
+        if (this.gameObject.tag == "NPCFemale")
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/Woman_base/Woman_scream", this.transform.position);
+        }
+        else
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/Man_base/Man_Scream", this.transform.position);
+        }
+
+        if (Vector3.Distance(transform.position, player.position) < fleeDistance)
         {
             Vector3 fleeDirection = transform.position - player.position;
             Vector3 fleeDestination = transform.position + fleeDirection.normalized * fleeDistance;
 
             agent.SetDestination(fleeDestination);
+            aiAnimator.SetBool("isRunning", true);
 
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1);
+            
         }
-        
+        else
+        {
+            Patrolling();
+        }
+    }
+    private void Tickled()
+    {
+        StartCoroutine(LaughterCycle());
+    }
+    IEnumerator LaughterCycle()
+    {
+        aiAnimator.SetTrigger("tickled");
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
     }
 }
