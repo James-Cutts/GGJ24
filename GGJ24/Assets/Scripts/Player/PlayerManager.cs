@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-   // Animator animator;
+    Animator animator;
     InputManager inputManager;
     PlayerMovement playerMovement;
-    CameraManager cameraManager;
 
     private void Awake()
     {
         inputManager = GetComponent<InputManager>();
-        cameraManager = FindObjectOfType<CameraManager>();
         playerMovement = GetComponent<PlayerMovement>();
-       // animator = GetComponentInChildren<Animator>();
+        animator = GetComponentInChildren<Animator>();
         Cursor.visible = false;
     }
 
@@ -30,6 +28,6 @@ public class PlayerManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        cameraManager.HandleAllCameraMovement();
+
     }
 }
