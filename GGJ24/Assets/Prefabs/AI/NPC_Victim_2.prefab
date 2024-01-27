@@ -70,8 +70,49 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2879506315982644393}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3511569862311070753, guid: 8e7ab21adec7a47bf8f65cbf47bad70d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8715706528059960518}
   m_SourcePrefab: {fileID: 100100000, guid: 8e7ab21adec7a47bf8f65cbf47bad70d, type: 3}
+--- !u!1 &1212627655042374067 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3511569862311070753, guid: 8e7ab21adec7a47bf8f65cbf47bad70d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2337232151312422290}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8715706528059960518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212627655042374067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -1118593816
+      Data2: 1148991408
+      Data3: -597610843
+      Data4: -1369405745
+    Path: event:/Characters/Gran/Gran_Chatter
+  Event: 
+  PlayEvent: 1
+  StopEvent: 3
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!4 &8745329753565566924 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6427238450427544158, guid: 8e7ab21adec7a47bf8f65cbf47bad70d,

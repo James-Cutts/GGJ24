@@ -52,6 +52,7 @@ public class AI_Behaviour : MonoBehaviour
         {
             walkPointSet = false;
         }
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 0); //idle
     }
 
     private void SearchWalkPoint()
@@ -83,6 +84,9 @@ public class AI_Behaviour : MonoBehaviour
             Vector3 fleeDestination = transform.position + fleeDirection.normalized * fleeDistance;
 
             agent.SetDestination(fleeDestination);
+
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1);
         }
+        
     }
 }

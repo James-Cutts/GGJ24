@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028353, g: 0.22571383, b: 0.30692253, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -254,6 +254,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Victim_3
       objectReference: {fileID: 0}
+    - target: {fileID: 1742462540404573104, guid: bd732b18489934d5a814481c21c8cf12,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8189726707906694607, guid: bd732b18489934d5a814481c21c8cf12,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -372,6 +377,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Victim_5
       objectReference: {fileID: 0}
+    - target: {fileID: 6185845335518328092, guid: a9c521b4d93834d118f2958de6c24ea7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -389,6 +399,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NPC_Victim_7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1606710537925311888, guid: 3442ab3677e47429698fbd857c4c3bd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9206931892683256815, guid: 3442ab3677e47429698fbd857c4c3bd2,
         type: 3}
@@ -705,6 +720,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Victim_6
       objectReference: {fileID: 0}
+    - target: {fileID: 7222991982758503950, guid: 187507ae29d8142f9aafac9aca77f8b1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -841,6 +861,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Victim_8
       objectReference: {fileID: 0}
+    - target: {fileID: 5975725107441787021, guid: f6de9387dcd1249eda9bc3980ab05d78,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -858,6 +883,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NPC_Victim_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1212627655042374067, guid: 75994056cdad44ed7a70cfd0fd338d09,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8745329753565566924, guid: 75994056cdad44ed7a70cfd0fd338d09,
         type: 3}
@@ -1153,6 +1183,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Victim_4
       objectReference: {fileID: 0}
+    - target: {fileID: 1169943859754278575, guid: efa98d3261ac246e5b78704e58202ba0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8770127797231161552, guid: efa98d3261ac246e5b78704e58202ba0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1418,6 +1453,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a758e7fd527e41f459eb7a5fc1fec065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcs: []
+  detectionRange: 2.5
+  inRange: 0
   isSprinting: 0
   isJumping: 0
   isGrounded: 1
@@ -1528,6 +1566,8 @@ GameObject:
   - component: {fileID: 7851844163289880414}
   - component: {fileID: 2911596816611784121}
   - component: {fileID: 236350999814631586}
+  - component: {fileID: 7851844163289880416}
+  - component: {fileID: 7851844163289880415}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1586,6 +1626,63 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &7851844163289880415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7840884516186595739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+--- !u!114 &7851844163289880416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7840884516186595739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1 &9196435815395115380
 GameObject:
   m_ObjectHideFlags: 0
