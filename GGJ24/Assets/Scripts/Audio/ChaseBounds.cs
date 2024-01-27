@@ -16,31 +16,31 @@ public class ChaseBounds : MonoBehaviour
         GameObject[] npcs = GameObject.FindGameObjectsWithTag("NPC");
         GameObject[] npcsFemale = GameObject.FindGameObjectsWithTag("NPCFemale");
 
-        //foreach (var npc in npcs)
-        //{
-        //    if (Vector3.Distance(transform.position, npc.transform.position) < 30)
-        //    {
-                
-        //        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chase
-        //    }
-        //    else
-        //    {
-        //        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 0); //idle
-                
-        //    }
-        //}
-        //foreach (var npcFemale in npcsFemale)
-        //{
-        //    if (Vector3.Distance(transform.position, npcFemale.transform.position) < 30)
-        //    {
+        foreach (var npc in npcs)
+        {
+            if (Vector3.Distance(transform.position, npc.transform.position) < 30)
+            {
 
-        //        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chase
-        //    }
-        //    else
-        //    {
-        //        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 0); //idle
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chase
+            }
+            else
+            {
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 0); //idle
 
-        //    }
-        //}
+            }
+        }
+        foreach (var npcFemale in npcsFemale)
+        {
+            if (Vector3.Distance(transform.position, npcFemale.transform.position) < 30)
+            {
+
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chase
+            }
+            else
+            {
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 0); //idle
+
+            }
+        }
     }
 }

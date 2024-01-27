@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float gravity = -9.81f;
 
 
+
     //Sound
     public string tickle = "event:/Player/Tickle";
     public string footstep = "event:/Player/Footsteps";
@@ -55,8 +56,8 @@ public class PlayerMovement : MonoBehaviour
 
         TickleEv = FMODUnity.RuntimeManager.CreateInstance(tickle);
         FootstepEv = FMODUnity.RuntimeManager.CreateInstance(footstep);
-
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 0); //idle
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 0);
+        //idle
 
     }
 
@@ -72,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
                 if (isTickling)
                 {
                     Destroy(npc);
-                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chase
+                    //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chase
                 }
             }
         }
@@ -83,8 +84,8 @@ public class PlayerMovement : MonoBehaviour
                 if (isTickling)
                 {
                     Destroy(npcFemale);
-                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chase
-
+                    //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chase
+                    
                 }
             }
         }
@@ -169,6 +170,7 @@ public class PlayerMovement : MonoBehaviour
             //FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Tickle", this.transform.position);
             TickleEv.start();
             Debug.Log("Tickle");
+            
         }
         else
         {
