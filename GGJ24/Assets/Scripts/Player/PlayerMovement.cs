@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    public GameObject[] npcs;
+    public float detectionRange = 10f;
+    public bool inRange;
+
     Rigidbody playerRigidbody;
 
     InputManager inputManager;
@@ -51,6 +56,22 @@ public class PlayerMovement : MonoBehaviour
         TickleEv = FMODUnity.RuntimeManager.CreateInstance(tickle);
         FootstepEv = FMODUnity.RuntimeManager.CreateInstance(footstep);
 
+    }
+
+    private void Update()
+    {
+        GameObject[] npcs = GameObject.FindGameObjectsWithTag("NPC");
+
+        foreach (var npc in npcs)
+        {
+            if (Vector3.Distance(transform.position, npc.transform.position) < +detectionRange)
+            {
+                if (isTickling)
+                {
+                    Destroy(npc);
+                }
+            }
+        }
     }
 
     public void HandleAllMovement()
