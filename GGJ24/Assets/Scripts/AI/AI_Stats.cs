@@ -6,9 +6,9 @@ using UnityEngine.AI;
 public class AI_Stats : MonoBehaviour
 {
     NavMeshAgent agent;
-    public float minSpeed;
-    public float maxSpeed;
-    private float speed;
+    public int minSpeed;
+    public int maxSpeed;
+    private int speed;
 
     private void Awake()
     {
