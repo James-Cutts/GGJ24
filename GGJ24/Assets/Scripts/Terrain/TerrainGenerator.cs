@@ -12,6 +12,8 @@ public class CircularTerrainGenerator : MonoBehaviour
 
     void Start()
     {
+        RandomizeHeightCurve();
+
         GenerateTerrain();
     }
 
@@ -86,5 +88,20 @@ public class CircularTerrainGenerator : MonoBehaviour
         }
 
         return height;
+    }
+
+    void RandomizeHeightCurve()
+    {
+        // Generate a random AnimationCurve
+        Keyframe[] keys = new Keyframe[5];
+        for (int i = 0; i < 5; i++)
+        {
+            float time = i / 4f;
+            float value = Random.Range(0f, 1f);
+            keys[i] = new Keyframe(time, value);
+        }
+
+        // Create a new AnimationCurve and assign the random keys
+        heightCurve = new AnimationCurve(keys);
     }
 }
