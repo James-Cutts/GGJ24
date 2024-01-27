@@ -9,6 +9,8 @@ public class AI_Behaviour : MonoBehaviour
     public Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
 
+    Animator aiAnimator;
+
     public float fleeDistance;
 
     public Vector3 walkPoint;
@@ -17,22 +19,12 @@ public class AI_Behaviour : MonoBehaviour
 
     public float sightRange;
     public bool playerInSightRange;
-    int screamCounter = 0;
-    bool scream = false;
-
-
-    public string screamMale = "event:/Characters/Woman_base/Woman_scream";
-    public string screamFemale = "event:/Characters/Man_base/Man_Scream";
-
-    FMOD.Studio.EventInstance MaleScreamEv;
-    FMOD.Studio.EventInstance FemaleScreamEv;
 
     private void Awake()
     {
+        aiAnimator = GetComponentInChildren<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
-        MaleScreamEv = FMODUnity.RuntimeManager.CreateInstance(screamMale);
-        FemaleScreamEv = FMODUnity.RuntimeManager.CreateInstance(screamFemale);
     }
     private void Update()
     {
@@ -45,7 +37,6 @@ public class AI_Behaviour : MonoBehaviour
         if(playerInSightRange)
         {
             Fleeing();
-            scream = true;
         }
     }
     private void Patrolling()
@@ -57,14 +48,15 @@ public class AI_Behaviour : MonoBehaviour
         if(walkPointSet)
         {
             agent.SetDestination(walkPoint);
+            aiAnimator.SetBool("isRunning", true);
         }
         Vector3 distanceToWalk = transform.position - walkPoint;
 
-        if(distanceToWalk.magnitude < 1f)
+        if(distanceToWalk.magnitude <= 0.1f)
         {
             walkPointSet = false;
         }
-        
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 0); //idle
     }
 
     private void SearchWalkPoint()
@@ -85,31 +77,32 @@ public class AI_Behaviour : MonoBehaviour
             walkPoint = hit.point;
             walkPointSet = true;
         }
-
-
     }
     private void Fleeing()
     {
-       
-
         if (Vector3.Distance(transform.position, player.position) < fleeDistance)
         {
             Vector3 fleeDirection = transform.position - player.position;
             Vector3 fleeDestination = transform.position + fleeDirection.normalized * fleeDistance;
 
             agent.SetDestination(fleeDestination);
+            aiAnimator.SetBool("isRunning", true);
 
-        }
-
-        if (this.gameObject.tag == "NPCFemale")
-        {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/Woman_base/Woman_scream", this.transform.position);
-
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1);
         }
         else
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/Man_base/Man_Scream", this.transform.position);
-      
+            Patrolling();
         }
+    }
+    private void Tickled()
+    {
+        StartCoroutine(LaughterCycle());
+    }
+    IEnumerator LaughterCycle()
+    {
+        aiAnimator.SetTrigger("tickled");
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
     }
 }
