@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -460,6 +460,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3442ab3677e47429698fbd857c4c3bd2, type: 3}
+--- !u!1 &521951834 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562,
+    type: 3}
+  m_PrefabInstance: {fileID: 1861930778}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &528877170
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,6 +595,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1861930778}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &990236292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521951834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e315ebb84b4f04fb28b081a6b0f3339b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1028341609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -601,6 +619,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Music Control
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150386786502537055, guid: 3b63f5c1416fd054aac319f4d94e5ea8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6007864905577261424, guid: 3b63f5c1416fd054aac319f4d94e5ea8,
         type: 3}
@@ -1042,6 +1065,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie1
       objectReference: {fileID: 0}
+    - target: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerChase
+      objectReference: {fileID: 0}
     - target: {fileID: 5919840380852676749, guid: 6dc4cf4496348884d8ee27743ae38562,
         type: 3}
       propertyPath: m_CastShadows
@@ -1105,7 +1133,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 990236292}
   m_SourcePrefab: {fileID: 100100000, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
 --- !u!1 &2014561705
 GameObject:
@@ -1187,6 +1219,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3163834929642173937, guid: efa98d3261ac246e5b78704e58202ba0,
+        type: 3}
+      propertyPath: EventReference.Path
+      value: event:/Characters/Manly_man/Manly_Chatter 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3163834929642173937, guid: efa98d3261ac246e5b78704e58202ba0,
+        type: 3}
+      propertyPath: EventReference.Guid.Data1
+      value: 343091311
+      objectReference: {fileID: 0}
+    - target: {fileID: 3163834929642173937, guid: efa98d3261ac246e5b78704e58202ba0,
+        type: 3}
+      propertyPath: EventReference.Guid.Data2
+      value: 1334623052
+      objectReference: {fileID: 0}
+    - target: {fileID: 3163834929642173937, guid: efa98d3261ac246e5b78704e58202ba0,
+        type: 3}
+      propertyPath: EventReference.Guid.Data3
+      value: -1673869947
+      objectReference: {fileID: 0}
+    - target: {fileID: 3163834929642173937, guid: efa98d3261ac246e5b78704e58202ba0,
+        type: 3}
+      propertyPath: EventReference.Guid.Data4
+      value: 58721547
       objectReference: {fileID: 0}
     - target: {fileID: 8770127797231161552, guid: efa98d3261ac246e5b78704e58202ba0,
         type: 3}

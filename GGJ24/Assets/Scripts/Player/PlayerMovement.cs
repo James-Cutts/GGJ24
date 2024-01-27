@@ -6,12 +6,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    private GameObject[] npcs;
+    public GameObject[] npcs;
     public float detectionRange = 10f;
     public bool inRange;
 
-    public PointSystem pointSystem;
-    public AI_Behaviour behaviour;
     Rigidbody playerRigidbody;
 
     InputManager inputManager;
@@ -41,6 +39,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float gravity = -9.81f;
 
 
+
+
+
     //Sound
     public string tickle = "event:/Player/Tickle";
     public string footstep = "event:/Player/Footsteps";
@@ -57,12 +58,15 @@ public class PlayerMovement : MonoBehaviour
 
         TickleEv = FMODUnity.RuntimeManager.CreateInstance(tickle);
         FootstepEv = FMODUnity.RuntimeManager.CreateInstance(footstep);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 0); 
+        //idle
 
     }
 
     private void Update()
     {
         GameObject[] npcs = GameObject.FindGameObjectsWithTag("NPC");
+        GameObject[] npcsFemale = GameObject.FindGameObjectsWithTag("NPCFemale");
 
         foreach (var npc in npcs)
         {
@@ -70,10 +74,24 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (isTickling)
                 {
+                    Destroy(npc);
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chase
+                   
+                    
+                }
 
-                    behaviour = npc.GetComponent<AI_Behaviour>();
-                    behaviour.Tickled();
-                    pointSystem.IncreaseScore();
+            }
+        }
+        foreach (var npcFemale in npcsFemale)
+        {
+            if (Vector3.Distance(transform.position, npcFemale.transform.position) < +detectionRange)
+            {
+                if (isTickling)
+                {
+                    Destroy(npcFemale);
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chasee
+                    
+                    
                 }
             }
         }
@@ -104,7 +122,6 @@ public class PlayerMovement : MonoBehaviour
             // Apply the appropriate movement speed based on sprinting and input amount
             if (isSprinting)
             {
-                Debug.Log("Sprinting");
                 moveDirection = moveDirection * sprintSpeed;
             }
             else
@@ -112,7 +129,6 @@ public class PlayerMovement : MonoBehaviour
 
                 if (inputManager.moveAmount >= 0.5f)
                 {
-                    Debug.Log("Running");
                     moveDirection = moveDirection * runningSpeed;
 
                 }
@@ -160,6 +176,7 @@ public class PlayerMovement : MonoBehaviour
             //FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Tickle", this.transform.position);
             TickleEv.start();
             Debug.Log("Tickle");
+            
         }
         else
         {

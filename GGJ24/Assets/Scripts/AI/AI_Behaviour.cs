@@ -56,7 +56,7 @@ public class AI_Behaviour : MonoBehaviour
         {
             walkPointSet = false;
         }
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 0); //idle
+        
     }
 
     private void SearchWalkPoint()
@@ -80,6 +80,15 @@ public class AI_Behaviour : MonoBehaviour
     }
     private void Fleeing()
     {
+        if (this.gameObject.tag == "NPCFemale")
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/Woman_base/Woman_scream", this.transform.position);
+        }
+        else
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/Man_base/Man_Scream", this.transform.position);
+        }
+
         if (Vector3.Distance(transform.position, player.position) < fleeDistance)
         {
             Vector3 fleeDirection = transform.position - player.position;
@@ -88,7 +97,7 @@ public class AI_Behaviour : MonoBehaviour
             agent.SetDestination(fleeDestination);
             aiAnimator.SetBool("isRunning", true);
 
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1);
+            
         }
         else
         {

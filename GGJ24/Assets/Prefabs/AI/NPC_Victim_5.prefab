@@ -92,6 +92,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Victim_5
       objectReference: {fileID: 0}
+    - target: {fileID: 3511569862311070753, guid: 8e7ab21adec7a47bf8f65cbf47bad70d,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPCFemale
+      objectReference: {fileID: 0}
     - target: {fileID: 6427238450427544158, guid: 8e7ab21adec7a47bf8f65cbf47bad70d,
         type: 3}
       propertyPath: m_LocalPosition.x
