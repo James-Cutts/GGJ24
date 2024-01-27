@@ -144,8 +144,49 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 103064064547209117}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3511569862311070753, guid: 8e7ab21adec7a47bf8f65cbf47bad70d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3163834929642173937}
   m_SourcePrefab: {fileID: 100100000, guid: 8e7ab21adec7a47bf8f65cbf47bad70d, type: 3}
+--- !u!1 &1169943859754278575 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3511569862311070753, guid: 8e7ab21adec7a47bf8f65cbf47bad70d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2344092349971911310}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3163834929642173937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169943859754278575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 343091311
+      Data2: 1334623052
+      Data3: -1673869947
+      Data4: 58721547
+    Path: event:/Characters/Manly man/Manly_Chatter 2
+  Event: 
+  PlayEvent: 1
+  StopEvent: 3
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!4 &8770127797231161552 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6427238450427544158, guid: 8e7ab21adec7a47bf8f65cbf47bad70d,

@@ -307,7 +307,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1742462540404573104, guid: bd732b18489934d5a814481c21c8cf12,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1347597020}
   m_SourcePrefab: {fileID: 100100000, guid: bd732b18489934d5a814481c21c8cf12, type: 3}
 --- !u!1001 &311685898
 PrefabInstance:
@@ -375,7 +379,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6185845335518328092, guid: a9c521b4d93834d118f2958de6c24ea7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1879904137}
   m_SourcePrefab: {fileID: 100100000, guid: a9c521b4d93834d118f2958de6c24ea7, type: 3}
 --- !u!1001 &440786286
 PrefabInstance:
@@ -443,7 +451,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1606710537925311888, guid: 3442ab3677e47429698fbd857c4c3bd2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 690917194}
   m_SourcePrefab: {fileID: 100100000, guid: 3442ab3677e47429698fbd857c4c3bd2, type: 3}
 --- !u!1 &528877170
 GameObject:
@@ -551,12 +563,123 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &690917188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1606710537925311888, guid: 3442ab3677e47429698fbd857c4c3bd2,
+    type: 3}
+  m_PrefabInstance: {fileID: 440786286}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &690917194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690917188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -1580263510
+      Data2: 1184714785
+      Data3: -1622161229
+      Data4: 184227577
+    Path: event:/Characters/Cop/Cop_Chatter
+  Event: 
+  PlayEvent: 1
+  StopEvent: 3
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!1 &831341100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1169943859754278575, guid: efa98d3261ac246e5b78704e58202ba0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2118983635}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &831341106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831341100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 343091311
+      Data2: 1334623052
+      Data3: -1673869947
+      Data4: 58721547
+    Path: event:/Characters/Manly man/Manly_Chatter 2
+  Event: 
+  PlayEvent: 1
+  StopEvent: 3
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!4 &990236291 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 578376449398627443, guid: 6dc4cf4496348884d8ee27743ae38562,
     type: 3}
   m_PrefabInstance: {fileID: 1861930778}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &997560450 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7222991982758503950, guid: 187507ae29d8142f9aafac9aca77f8b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1151788013}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &997560456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997560450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 500787044
+      Data2: 1320868819
+      Data3: -1338193495
+      Data4: 409433763
+    Path: event:/Characters/Ginger Man/Ginger_chatter
+  Event: 
+  PlayEvent: 1
+  StopEvent: 3
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1028341609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -691,7 +814,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7222991982758503950, guid: 187507ae29d8142f9aafac9aca77f8b1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 997560456}
   m_SourcePrefab: {fileID: 100100000, guid: 187507ae29d8142f9aafac9aca77f8b1, type: 3}
 --- !u!1001 &1168074316
 PrefabInstance:
@@ -759,7 +886,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 115316346438540368, guid: 0d3349b995af54421879cd85a09a4159,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1875050462}
   m_SourcePrefab: {fileID: 100100000, guid: 0d3349b995af54421879cd85a09a4159, type: 3}
 --- !u!1001 &1207034444
 PrefabInstance:
@@ -827,7 +958,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5975725107441787021, guid: f6de9387dcd1249eda9bc3980ab05d78,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1626403914}
   m_SourcePrefab: {fileID: 100100000, guid: f6de9387dcd1249eda9bc3980ab05d78, type: 3}
 --- !u!1001 &1283138487
 PrefabInstance:
@@ -895,8 +1030,86 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1212627655042374067, guid: 75994056cdad44ed7a70cfd0fd338d09,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2120202904}
   m_SourcePrefab: {fileID: 100100000, guid: 75994056cdad44ed7a70cfd0fd338d09, type: 3}
+--- !u!1 &1347597014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1742462540404573104, guid: bd732b18489934d5a814481c21c8cf12,
+    type: 3}
+  m_PrefabInstance: {fileID: 252835461}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1347597020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347597014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -1991667760
+      Data2: 1319466684
+      Data3: 1485089461
+      Data4: -1358605022
+    Path: event:/Characters/Woman1/Woman1_Chatter
+  Event: 
+  PlayEvent: 1
+  StopEvent: 3
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!1 &1626403908 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5975725107441787021, guid: f6de9387dcd1249eda9bc3980ab05d78,
+    type: 3}
+  m_PrefabInstance: {fileID: 1207034444}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1626403914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626403908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -1580263510
+      Data2: 1184714785
+      Data3: -1622161229
+      Data4: 184227577
+    Path: event:/Characters/Cop/Cop_Chatter
+  Event: 
+  PlayEvent: 1
+  StopEvent: 3
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1861930778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1060,6 +1273,80 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+--- !u!1 &1875050456 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 115316346438540368, guid: 0d3349b995af54421879cd85a09a4159,
+    type: 3}
+  m_PrefabInstance: {fileID: 1168074316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1875050462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875050456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 1751549922
+      Data2: 1099188100
+      Data3: 1987582097
+      Data4: -1815938060
+    Path: event:/Characters/Kid/Kid_Chatter
+  Event: 
+  PlayEvent: 1
+  StopEvent: 3
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!1 &1879904131 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6185845335518328092, guid: a9c521b4d93834d118f2958de6c24ea7,
+    type: 3}
+  m_PrefabInstance: {fileID: 311685898}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1879904137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879904131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 986778387
+      Data2: 1131694053
+      Data3: 910155176
+      Data4: -40743399
+    Path: event:/Characters/Woman2/Woman2_Chatter
+  Event: 
+  PlayEvent: 1
+  StopEvent: 3
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2014561705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,8 +1476,49 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1169943859754278575, guid: efa98d3261ac246e5b78704e58202ba0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 831341106}
   m_SourcePrefab: {fileID: 100100000, guid: efa98d3261ac246e5b78704e58202ba0, type: 3}
+--- !u!1 &2120202898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1212627655042374067, guid: 75994056cdad44ed7a70cfd0fd338d09,
+    type: 3}
+  m_PrefabInstance: {fileID: 1283138487}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2120202904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120202898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -1118593816
+      Data2: 1148991408
+      Data3: -597610843
+      Data4: -1369405745
+    Path: event:/Characters/Gran/Gran_Chatter
+  Event: 
+  PlayEvent: 1
+  StopEvent: 3
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2138396287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1416,6 +1744,8 @@ MonoBehaviour:
   rotationSpeed: 50
   jumpHeight: 0.5
   gravity: -9.81
+  tickle: event:/Player/Tickle
+  footstep: event:/Player/Footsteps
 --- !u!4 &5494620546763190123
 Transform:
   m_ObjectHideFlags: 0
@@ -1582,6 +1912,7 @@ GameObject:
   - component: {fileID: 2269666751472227610}
   - component: {fileID: 5942753558302170662}
   - component: {fileID: 3425355844712117456}
+  - component: {fileID: 9196435815395115381}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1589,6 +1920,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9196435815395115381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9196435815395115380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

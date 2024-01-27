@@ -144,7 +144,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2126674772819788238}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3511569862311070753, guid: 8e7ab21adec7a47bf8f65cbf47bad70d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7931605520953424425}
   m_SourcePrefab: {fileID: 100100000, guid: 8e7ab21adec7a47bf8f65cbf47bad70d, type: 3}
 --- !u!4 &4280586976744238834 stripped
 Transform:
@@ -152,3 +156,40 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7085728452455148716}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5975725107441787021 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3511569862311070753, guid: 8e7ab21adec7a47bf8f65cbf47bad70d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7085728452455148716}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7931605520953424425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5975725107441787021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -1580263510
+      Data2: 1184714785
+      Data3: -1622161229
+      Data4: 184227577
+    Path: event:/Characters/Cop/Cop_Chatter
+  Event: 
+  PlayEvent: 1
+  StopEvent: 3
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

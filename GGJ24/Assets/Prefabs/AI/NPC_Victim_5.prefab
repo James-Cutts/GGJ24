@@ -144,7 +144,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4600894770404902677}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3511569862311070753, guid: 8e7ab21adec7a47bf8f65cbf47bad70d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1198171649703006837}
   m_SourcePrefab: {fileID: 100100000, guid: 8e7ab21adec7a47bf8f65cbf47bad70d, type: 3}
 --- !u!4 &4346308927309232995 stripped
 Transform:
@@ -152,3 +156,40 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7305704599583160637}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6185845335518328092 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3511569862311070753, guid: 8e7ab21adec7a47bf8f65cbf47bad70d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7305704599583160637}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1198171649703006837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6185845335518328092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 986778387
+      Data2: 1131694053
+      Data3: 910155176
+      Data4: -40743399
+    Path: event:/Characters/Woman2/Woman2_Chatter
+  Event: 
+  PlayEvent: 1
+  StopEvent: 3
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
