@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public bool inRange;
 
     public PointSystem pointSystem;
+    public AI_Behaviour behaviour;
     Rigidbody playerRigidbody;
 
     InputManager inputManager;
@@ -69,7 +70,9 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (isTickling)
                 {
-                    Destroy(npc);
+
+                    behaviour = npc.GetComponent<AI_Behaviour>();
+                    behaviour.Tickled();
                     pointSystem.IncreaseScore();
                 }
             }

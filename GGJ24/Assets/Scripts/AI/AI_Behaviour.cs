@@ -95,7 +95,7 @@ public class AI_Behaviour : MonoBehaviour
             Patrolling();
         }
     }
-    private void Tickled()
+    public void Tickled()
     {
         StartCoroutine(LaughterCycle());
     }
