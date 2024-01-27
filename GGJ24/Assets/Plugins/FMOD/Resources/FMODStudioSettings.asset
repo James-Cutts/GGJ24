@@ -320,7 +320,7 @@ MonoBehaviour:
   sourceBankPath: Assets/Audio/Desktop
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 1
-  ShowBankRefreshWindow: 0
+  ShowBankRefreshWindow: 1
   AutomaticEventLoading: 1
   BankLoadType: 0
   AutomaticSampleLoading: 0
@@ -353,7 +353,7 @@ MonoBehaviour:
   SharedLibraryUpdateStage: 0
   SharedLibraryTimeSinceStart: 0
   CurrentVersion: 131616
-  HideSetupWizard: 0
+  HideSetupWizard: 1
   LastEventReferenceScanVersion: 131616
   Platforms:
   - {fileID: -8786187663193078063}
