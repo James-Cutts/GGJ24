@@ -9,12 +9,14 @@ public class AnimManager : MonoBehaviour
     PlayerMovement playerMovement;
     int horizontal;
     int vertical;
+    int tickleTrigger;
 
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
         horizontal = Animator.StringToHash("Horizontal");
         vertical = Animator.StringToHash("Vertical");
+        tickleTrigger = Animator.StringToHash("Tickle");
         inputManager = GetComponent<InputManager>();
         playerMovement = GetComponent<PlayerMovement>();
     }
@@ -76,5 +78,11 @@ public class AnimManager : MonoBehaviour
         }
         animator.SetFloat(horizontal, snappedHorizontal, 0.1f, Time.deltaTime);
         animator.SetFloat(vertical, snappedVertical, 0.1f, Time.deltaTime);
+    }
+
+    public void PlayTickleAnimation()
+    {
+        // Trigger tickle animation
+        animator.SetTrigger(tickleTrigger);
     }
 }

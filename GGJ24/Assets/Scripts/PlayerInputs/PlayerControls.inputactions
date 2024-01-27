@@ -51,16 +51,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Inventory",
-                    "type": "Button",
-                    "id": "9aa26d09-05cc-407d-af02-d6b917e5ec06",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Interact",
+                    "name": "Tickle",
                     "type": "Button",
                     "id": "527b00f8-db25-47d6-9918-e00437f63d01",
                     "expectedControlType": "Button",
@@ -312,45 +303,23 @@
                 },
                 {
                     "name": "",
-                    "id": "243a8a69-5b31-49a1-96c6-01bb2c1e5c08",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Inventory",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a10427bf-c667-436e-901a-d2c4a2d167be",
-                    "path": "<Gamepad>/buttonNorth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Inventory",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "aa11c6c0-a782-4c68-85a3-b76b0a7c58ad",
-                    "path": "<Keyboard>/f",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Interact",
+                    "action": "Tickle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "7c76024d-441f-4426-a8b8-f13214bf61d8",
-                    "path": "<Gamepad>/buttonWest",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Interact",
+                    "action": "Tickle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

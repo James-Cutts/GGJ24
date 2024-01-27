@@ -17,19 +17,20 @@ public class PlayerMovement : MonoBehaviour
     public bool isJumping;
     public bool isGrounded;
     public bool isIdle;
+    public bool isTickling;
 
     [Header("Ground Check")]
     [SerializeField] LayerMask groundMask;
     [SerializeField] float groundCheckDistance = 0.4f;
 
     [Header("Movement Speeds")]
-    [SerializeField] float walkingSpeed = 2;
-    [SerializeField] float runningSpeed = 5;
-    [SerializeField] float sprintSpeed = 7;
-    [SerializeField] float rotationSpeed = 15f;
+    [SerializeField] float walkingSpeed;
+    [SerializeField] float runningSpeed;
+    [SerializeField] float sprintSpeed;
+    [SerializeField] float rotationSpeed;
 
     [Header("Jump")]
-    [SerializeField] float jumpHeight = 1.5f;
+    [SerializeField] float jumpHeight;
     [SerializeField] float gravity = -9.81f;
 
 
@@ -47,13 +48,14 @@ public class PlayerMovement : MonoBehaviour
         // Handle all movement
         HandleMovement();
         HandleRotation();
+        HandleTickleInput();
     }
 
     private void HandleMovement()
     {
         // Check if the player is grounded
         isGrounded = Physics.CheckSphere(transform.position, groundCheckDistance, groundMask);
-        
+
         if (isGrounded)
         {
             // Calculate the movement direction based on camera orientation and player input
@@ -102,25 +104,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleRotation()
     {
-         // Calculate the target direction based on camera orientation and player input
-        Vector3 targetDirection = Vector3.zero;
+        float rotationAngle = inputManager.cameraInputX * rotationSpeed * Time.deltaTime;
+        transform.Rotate(Vector3.up, rotationAngle);
+    }
 
-        targetDirection = cameraObject.forward * inputManager.verticalInput;
-        targetDirection = targetDirection + cameraObject.right * inputManager.horizontalInput;
-        targetDirection.Normalize();
-        targetDirection.y = 0f;
-
-        if(targetDirection == Vector3.zero)
+    private void HandleTickleInput()
+    {
+        if (isTickling)
         {
-            // If there is no input, maintain the current forward direction
-            targetDirection = transform.forward;
-        }
-        // Calculate the target rotation based on the target direction
-        Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-        // Smoothly interpolate between the current rotation and the target rotation
-        Quaternion playerRotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-        // Apply the final rotation to the player's transform
-        transform.rotation = playerRotation;
+        }
     }
 }
