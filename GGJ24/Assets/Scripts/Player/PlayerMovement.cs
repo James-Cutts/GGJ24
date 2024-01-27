@@ -6,10 +6,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    public GameObject[] npcs;
+    private GameObject[] npcs;
     public float detectionRange = 10f;
     public bool inRange;
 
+    public PointSystem pointSystem;
     Rigidbody playerRigidbody;
 
     InputManager inputManager;
@@ -69,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
                 if (isTickling)
                 {
                     Destroy(npc);
+                    pointSystem.IncreaseScore();
                 }
             }
         }
