@@ -1454,7 +1454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcs: []
-  detectionRange: 10
+  detectionRange: 2.5
   inRange: 0
   isSprinting: 0
   isJumping: 0
