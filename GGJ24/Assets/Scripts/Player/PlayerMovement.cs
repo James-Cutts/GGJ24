@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.InputSystem.OnScreen.OnScreenStick;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,8 +12,9 @@ public class PlayerMovement : MonoBehaviour
     public bool inRange;
 
     Rigidbody playerRigidbody;
-
+    AI_Behaviour behaviour;
     InputManager inputManager;
+    PointSystem pointSystem;
 
     Vector3 moveDirection;
     Transform cameraObject;
@@ -55,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
         inputManager = GetComponent<InputManager>();
         playerRigidbody = GetComponent<Rigidbody>();
         cameraObject = Camera.main.transform;
-
+        pointSystem = FindObjectOfType<PointSystem>();
         TickleEv = FMODUnity.RuntimeManager.CreateInstance(tickle);
         FootstepEv = FMODUnity.RuntimeManager.CreateInstance(footstep);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 0); 
@@ -74,10 +76,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (isTickling)
                 {
-                    Destroy(npc);
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chase
-                   
-                    
+                    behaviour = npc.GetComponent<AI_Behaviour>();
+                    behaviour.Tickled();
+                    pointSystem.IncreaseScore();
+
                 }
 
             }
@@ -88,10 +91,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (isTickling)
                 {
-                    Destroy(npcFemale);
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chasee
-                    
-                    
+
+                    behaviour = npcFemale.GetComponent<AI_Behaviour>();
+                    behaviour.Tickled();
+                    pointSystem.IncreaseScore();
                 }
             }
         }
