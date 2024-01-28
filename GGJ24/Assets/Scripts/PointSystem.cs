@@ -1,23 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PointSystem : MonoBehaviour
 {
-    public int score = 0;
     public int happiness = 0;
     public int maxHappiness = 100;
-
+    public TextMeshProUGUI happyText;
     private void Update()
     {
        if (happiness >= maxHappiness)
         {
             LevelComplete();
         }
+        happyText.text = happiness + "%";
     }
     public void IncreaseScore()
     {
-        score = score + 100;
         happiness = happiness + 2;
     }
 
@@ -28,6 +29,6 @@ public class PointSystem : MonoBehaviour
 
     public void LevelComplete()
     {
-        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
