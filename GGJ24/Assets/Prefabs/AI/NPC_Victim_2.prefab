@@ -119,7 +119,7 @@ MonoBehaviour:
     Path: event:/Characters/Gran/Gran_Chatter
   Event: 
   PlayEvent: 1
-  StopEvent: 3
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
