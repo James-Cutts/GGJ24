@@ -248,7 +248,7 @@ MonoBehaviour:
   walkingSpeed: 2.5
   runningSpeed: 5
   sprintSpeed: 10
-  rotationSpeed: 50
+  rotationSpeed: 20
   jumpHeight: 0.5
   gravity: -9.81
   tickle: event:/Player/Tickle
