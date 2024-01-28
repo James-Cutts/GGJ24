@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/Audio/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638420507130400000
+  lastModified: 638420542480321208
   FileSizes: []
   Exists: 1
 --- !u!114 &-8586768440746650789
@@ -87,7 +87,7 @@ MonoBehaviour:
   Path: Assets/Audio/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638420507130400000
+  lastModified: 638420542480379720
   FileSizes:
   - Name: 
     Value: 1752
@@ -116,7 +116,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -5301846195776104043}
+  - {fileID: -6445003703395002575}
   MinDistance: 1
   MaxDistance: 20
   Length: 8000
@@ -147,6 +147,54 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4429
+--- !u!114 &-6445003703395002575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/WaterVol
+  m_EditorClassIdentifier: 
+  Name: WaterVol
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2025410585
+    data2: 1227038002
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-5767754845347507579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/WaterVol
+  m_EditorClassIdentifier: 
+  Name: WaterVol
+  StudioPath: parameter:/WaterVol
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2025410585
+    data2: 1227038002
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-5301846195776104043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,13 +383,13 @@ MonoBehaviour:
   EditorParameters:
   - {fileID: 6441395032600634251}
   - {fileID: -550345308123111339}
-  - {fileID: 1033493223866895828}
-  - {fileID: 8581777249378847553}
+  - {fileID: -5767754845347507579}
+  - {fileID: 3469663253565170900}
   MasterBanks:
   - {fileID: -8858282195153995821}
   StringsBanks:
   - {fileID: -7907144728338926290}
-  cacheTime: 638420507130400000
+  cacheTime: 638420542480379720
   cacheVersion: 131616
 --- !u!114 &776927356909327241
 MonoBehaviour:
@@ -445,6 +493,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
+--- !u!114 &1959083984197771497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/MenuMusic
+  m_EditorClassIdentifier: 
+  Name: MenuMusic
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 365481002
+    data2: 2746645859
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &3127748387466236688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,10 +542,34 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: 5231664195001522328}
-  - {fileID: 776927356909327241}
+  - {fileID: 1959083984197771497}
   MinDistance: 1
   MaxDistance: 20
   Length: 3000
+--- !u!114 &3469663253565170900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MenuMusic
+  m_EditorClassIdentifier: 
+  Name: MenuMusic
+  StudioPath: parameter:/MenuMusic
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 365481002
+    data2: 2746645859
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &3746846080058294635
 MonoBehaviour:
   m_ObjectHideFlags: 0
