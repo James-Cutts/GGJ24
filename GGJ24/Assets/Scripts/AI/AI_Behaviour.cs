@@ -106,6 +106,16 @@ public class AI_Behaviour : MonoBehaviour
     }
     public void Tickled()
     {
+        if (this.gameObject.tag == "NPC")
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/Man_base/Man_Tickle", this.transform.position);
+
+        }
+        else
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/Woman_base/Woman_Tickle", this.transform.position);
+
+        }
         StartCoroutine(LaughterCycle());
     }
     IEnumerator LaughterCycle()

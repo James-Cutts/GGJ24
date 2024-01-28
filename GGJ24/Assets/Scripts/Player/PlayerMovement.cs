@@ -40,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpHeight;
     [SerializeField] float gravity = -9.81f;
 
+    bool tickleCD = false;
+
 
 
 
@@ -123,6 +125,35 @@ public class PlayerMovement : MonoBehaviour
             moveDirection.Normalize();
             moveDirection.y = 0f;
 
+            if(transform.position.y <= 6)
+            {
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("WaterVol", 1);
+            }
+            else
+            {
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("WaterVol", 0);
+            }
+
+            //RaycastHit hit;
+            //
+            //if (Physics.Raycast(this.transform.position, -transform.up, out hit, 100.0f))
+            //{
+            //    //Color color = hit.transform.gameObject.GetComponent<Renderer>().material.color;
+            //    //print("Object colour: " + color);
+
+            //    string name = hit.transform.name;
+
+            //    if(name == "Terrain")
+            //    {
+            //        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("WaterVol", 0); //off
+            //    }
+            //    else
+            //    {
+            //        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("WaterVol", 1); //on
+            //    }
+            //    //Debug.Log(name);
+            //}
+
             // Apply the appropriate movement speed based on sprinting and input amount
             if (isSprinting)
             {
@@ -178,13 +209,42 @@ public class PlayerMovement : MonoBehaviour
         if (isTickling)
         {
             //FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Tickle", this.transform.position);
-            TickleEv.start();
-            Debug.Log("Tickle");
+            if (tickleCD == false)
+            {
+                TickleEv.start();
+                Debug.Log("Tickle");
+                StartCoroutine("TickleTimer");
+            }
+            
             
         }
         else
         {
             //TickleEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
+    }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Water")
+    //    {
+    //        Debug.Log("water!");
+    //        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("WaterVol", 1);
+    //    }
+    //}
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Water")
+    //    {
+    //        Debug.Log("water!");
+    //        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("WaterVol", 0);
+    //    }
+    //}
+
+    IEnumerator TickleTimer()
+    {
+        tickleCD = true;
+        yield return new WaitForSeconds(2);
+        tickleCD = false;
     }
 }
