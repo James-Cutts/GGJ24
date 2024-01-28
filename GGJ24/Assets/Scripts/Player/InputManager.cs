@@ -26,6 +26,7 @@ public class InputManager : MonoBehaviour
     public bool jumpInput;
     public bool tickleInput;
 
+    private bool isTickleOnCooldown = false;
 
     private void Awake()
     {
@@ -50,8 +51,8 @@ public class InputManager : MonoBehaviour
             playerControls.Gameplay.Sprint.performed += i => sprintInput = true;
             playerControls.Gameplay.Sprint.canceled += i => sprintInput = false;
 
-            playerControls.Gameplay.Tickle.performed += i => tickleInput = true;
-            playerControls.Gameplay.Tickle.canceled += i => tickleInput = false;
+            playerControls.Gameplay.Tickle.performed += i => TickleButtonDown();
+            playerControls.Gameplay.Tickle.canceled += i => TickleButtonUp();
 
         }
 
@@ -111,6 +112,26 @@ public class InputManager : MonoBehaviour
         {
             playerMovement.isJumping = false;
         }
+    }
+    private void TickleButtonDown()
+    {
+        if (!isTickleOnCooldown)
+        {
+            tickleInput = true;
+            isTickleOnCooldown = true;
+            StartCoroutine(TickleCooldown(1.5f)); // Start the cooldown coroutine
+        }
+    }
+
+    private void TickleButtonUp()
+    {
+        tickleInput = false;
+    }
+
+    IEnumerator TickleCooldown(float cooldownTime)
+    {
+        yield return new WaitForSeconds(cooldownTime);
+        isTickleOnCooldown = false; // Reset the cooldown flag
     }
 
     private void HandleTickleInput()
