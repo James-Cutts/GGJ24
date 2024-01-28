@@ -13,6 +13,17 @@ public class PointSystem : MonoBehaviour
     private float timer = 0f;
     public TextMeshProUGUI timerText;
     public bool isLevelComplete = false;
+
+    private int currentLevelIndex;
+
+    public GameObject finalTime;
+    public TextMeshProUGUI finalTimerText;
+
+    private void Start()
+    {
+        currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+    }
+
     private void Update()
     {
         if (!isLevelComplete)
@@ -27,22 +38,71 @@ public class PointSystem : MonoBehaviour
         }
         happyText.text = happiness + "%";
     }
+
     public void IncreaseScore()
     {
-        happiness = happiness + 2;
+        happiness += 2;
     }
 
     public void LevelComplete()
     {
         isLevelComplete = true;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SaveTime(timer, currentLevelIndex); // Save the time for the current level
+        LoadNextLevel();
     }
+
+    private void LoadNextLevel()
+    {
+        int nextLevelIndex = currentLevelIndex + 1;
+        if (nextLevelIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextLevelIndex);
+        }
+        else
+        {
+            // All levels are complete, you can display the saved times
+            DisplaySavedTimes();
+        }
+    }
+
     private void UpdateTimerText()
     {
         int minutes = Mathf.FloorToInt(timer / 60f);
         int seconds = Mathf.FloorToInt(timer % 60f);
         int milliseconds = Mathf.FloorToInt((timer * 1000f) % 100f);
         timerText.text = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, milliseconds);
+    }
+
+    private void SaveTime(float time, int levelIndex)
+    {
+        string key = "LevelTime_" + levelIndex;
+        PlayerPrefs.SetFloat(key, time);
+        PlayerPrefs.Save();
+    }
+
+    private void DisplaySavedTimes()
+    {
+        float totalTime = 0f;
+
+        // Iterate through each level and add its saved time to totalTime
+        for (int i = 0; i < SceneManager.sceneCountInBuildSettings; i++)
+        {
+            string key = "LevelTime_" + i;
+            float savedTime = PlayerPrefs.GetFloat(key, -1f); // -1f indicates no time saved
+            if (savedTime >= 0)
+            {
+                Debug.Log("Level " + i + " Time: " + savedTime);
+                totalTime += savedTime;
+            }
+        }
+
+        finalTime.SetActive(true);
+
+        // Display the total time
+        int totalMinutes = Mathf.FloorToInt(totalTime / 60f);
+        int totalSeconds = Mathf.FloorToInt(totalTime % 60f);
+        int totalMilliseconds = Mathf.FloorToInt((totalTime * 1000f) % 100f);
+        finalTimerText.text = string.Format("{0:00}:{1:00}:{2:00}", totalMinutes, totalSeconds, totalMilliseconds);
     }
 
 }
