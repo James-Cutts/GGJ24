@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3466812737473905889}
   m_Layer: 5
   m_Name: Time and %
-  m_TagString: Untagged
+  m_TagString: Points
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,6 +120,7 @@ MonoBehaviour:
   maxHappiness: 100
   happyText: {fileID: 2538337088196816058}
   timerText: {fileID: 2519903522549270910}
+  isLevelComplete: 0
 --- !u!1 &4178502515286554921
 GameObject:
   m_ObjectHideFlags: 0

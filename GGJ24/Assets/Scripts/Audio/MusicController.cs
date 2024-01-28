@@ -12,6 +12,8 @@ public class MusicController : MonoBehaviour
     //public string run = "event:/Running/Run";
     //public string breaks = "event:/Breaks/Breaks";
 
+    public PointSystem pointScript;
+
 
     public Transform player;
     float playerDistance;
@@ -43,6 +45,7 @@ public class MusicController : MonoBehaviour
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        pointScript = FindObjectOfType<PointSystem>();
 
     }
 
@@ -65,6 +68,17 @@ public class MusicController : MonoBehaviour
         playerDistance = Vector3.Distance(player.position, this.transform.position);
         playerDistance = playerDistance / 100;
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("WavesLvl", playerDistance);
+
+        if (pointScript.isLevelComplete == true)
+        {
+            destroyEvents();
+        }
         
+    }
+
+    public void destroyEvents()
+    {
+        AtmosEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        MusicEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }

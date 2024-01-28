@@ -12,7 +12,7 @@ public class PointSystem : MonoBehaviour
 
     private float timer = 0f;
     public TextMeshProUGUI timerText;
-    private bool isLevelComplete = false;
+    public bool isLevelComplete = false;
     private void Update()
     {
         if (!isLevelComplete)
