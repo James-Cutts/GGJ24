@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/Audio/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638420507130400000
+  lastModified: 638420541723100000
   FileSizes: []
   Exists: 1
 --- !u!114 &-8586768440746650789
@@ -70,7 +70,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 9.8
   Length: 5627
 --- !u!114 &-7907144728338926290
 MonoBehaviour:
@@ -87,7 +87,7 @@ MonoBehaviour:
   Path: Assets/Audio/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638420507130400000
+  lastModified: 638420541723100000
   FileSizes:
   - Name: 
     Value: 1752
@@ -145,7 +145,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 9.8
   Length: 4429
 --- !u!114 &-5301846195776104043
 MonoBehaviour:
@@ -196,7 +196,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 9.6
   Length: 1860
 --- !u!114 &-2527564352815400322
 MonoBehaviour:
@@ -223,7 +223,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 9.8
   Length: 4429
 --- !u!114 &-1316199857304705836
 MonoBehaviour:
@@ -341,7 +341,7 @@ MonoBehaviour:
   - {fileID: -8858282195153995821}
   StringsBanks:
   - {fileID: -7907144728338926290}
-  cacheTime: 638420507130400000
+  cacheTime: 638420541723100000
   cacheVersion: 131616
 --- !u!114 &776927356909327241
 MonoBehaviour:
@@ -392,7 +392,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 9.8
   Length: 7916
 --- !u!114 &1033493223866895828
 MonoBehaviour:
@@ -553,7 +553,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 9.400001
   Length: 7916
 --- !u!114 &5231664195001522328
 MonoBehaviour:
@@ -683,7 +683,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 9.8
   Length: 5627
 --- !u!114 &8581777249378847553
 MonoBehaviour:
