@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody playerRigidbody;
     AI_Behaviour behaviour;
     InputManager inputManager;
-    PointSystem pointSystem;
 
     Vector3 moveDirection;
     Transform cameraObject;
@@ -59,7 +58,6 @@ public class PlayerMovement : MonoBehaviour
         inputManager = GetComponent<InputManager>();
         playerRigidbody = GetComponent<Rigidbody>();
         cameraObject = Camera.main.transform;
-        pointSystem = FindObjectOfType<PointSystem>();
         TickleEv = FMODUnity.RuntimeManager.CreateInstance(tickle);
         FootstepEv = FMODUnity.RuntimeManager.CreateInstance(footstep);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 0); 
@@ -81,7 +79,6 @@ public class PlayerMovement : MonoBehaviour
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ChaseState", 1); //chase
                     behaviour = npc.GetComponent<AI_Behaviour>();
                     behaviour.Tickled();
-                    pointSystem.IncreaseScore();
 
                 }
 
@@ -97,7 +94,6 @@ public class PlayerMovement : MonoBehaviour
 
                     behaviour = npcFemale.GetComponent<AI_Behaviour>();
                     behaviour.Tickled();
-                    pointSystem.IncreaseScore();
                 }
             }
         }
