@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/Audio/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638420428884213106
+  lastModified: 638420507130400000
   FileSizes: []
   Exists: 1
 --- !u!114 &-8586768440746650789
@@ -87,10 +87,10 @@ MonoBehaviour:
   Path: Assets/Audio/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638420428884297205
+  lastModified: 638420507130400000
   FileSizes:
   - Name: 
-    Value: 1712
+    Value: 1752
   Exists: 1
 --- !u!114 &-7572632235868401837
 MonoBehaviour:
@@ -336,12 +336,37 @@ MonoBehaviour:
   - {fileID: 6441395032600634251}
   - {fileID: -550345308123111339}
   - {fileID: 1033493223866895828}
+  - {fileID: 8581777249378847553}
   MasterBanks:
   - {fileID: -8858282195153995821}
   StringsBanks:
   - {fileID: -7907144728338926290}
-  cacheTime: 638420428884297205
+  cacheTime: 638420507130400000
   cacheVersion: 131616
+--- !u!114 &776927356909327241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/MenuMusic
+  m_EditorClassIdentifier: 
+  Name: MenuMusic
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 365481002
+    data2: 2746645859
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &971423771914294993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,6 +470,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: 5231664195001522328}
+  - {fileID: 776927356909327241}
   MinDistance: 1
   MaxDistance: 20
   Length: 3000
@@ -659,3 +685,27 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5627
+--- !u!114 &8581777249378847553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MenuMusic
+  m_EditorClassIdentifier: 
+  Name: MenuMusic
+  StudioPath: parameter:/MenuMusic
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 365481002
+    data2: 2746645859
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
