@@ -188,7 +188,7 @@ MonoBehaviour:
     Path: event:/Characters/Manly man/Manly_Chatter 2
   Event: 
   PlayEvent: 1
-  StopEvent: 3
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
