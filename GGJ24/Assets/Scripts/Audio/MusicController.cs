@@ -26,8 +26,8 @@ public class MusicController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
-        
+
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MenuMusic", 1);
         //FoleyEv.EventReference = FMODUnity.RuntimeManager.PathToEventReference(foley);
         AtmosEv = FMODUnity.RuntimeManager.CreateInstance(atmos);
         MusicEv = FMODUnity.RuntimeManager.CreateInstance(music);

@@ -11,6 +11,11 @@ public class MainMenu : MonoBehaviour
 
     private GameObject lastActiveScreen;
 
+    private void Start()
+    {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MenuMusic", 0);
+    }
+
     private void Update()
     {
         // Check if the "Cancel" button is pressed to close active screens
