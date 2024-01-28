@@ -40,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpHeight;
     [SerializeField] float gravity = -9.81f;
 
+    bool tickleCD = false;
+
 
 
 
@@ -178,13 +180,25 @@ public class PlayerMovement : MonoBehaviour
         if (isTickling)
         {
             //FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Tickle", this.transform.position);
-            TickleEv.start();
-            Debug.Log("Tickle");
+            if (tickleCD == false)
+            {
+                TickleEv.start();
+                Debug.Log("Tickle");
+                StartCoroutine("TickleTimer");
+            }
+            
             
         }
         else
         {
             //TickleEv.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
+    }
+
+    IEnumerator TickleTimer()
+    {
+        tickleCD = true;
+        yield return new WaitForSeconds(2);
+        tickleCD = false;
     }
 }
