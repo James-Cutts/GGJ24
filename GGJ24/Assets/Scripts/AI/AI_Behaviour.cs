@@ -7,6 +7,7 @@ public class AI_Behaviour : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Transform player;
+    PointSystem pointSystem;
     public LayerMask whatIsGround, whatIsPlayer;
 
     Animator aiAnimator;
@@ -25,9 +26,11 @@ public class AI_Behaviour : MonoBehaviour
         aiAnimator = GetComponentInChildren<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+
     }
     private void Update()
     {
+        pointSystem = FindObjectOfType<PointSystem>();
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
 
         if(!playerInSightRange)
@@ -121,7 +124,8 @@ public class AI_Behaviour : MonoBehaviour
     IEnumerator LaughterCycle()
     {
         aiAnimator.SetTrigger("tickled");
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
+        pointSystem.IncreaseScore();
         Destroy(gameObject);
     }
 }
