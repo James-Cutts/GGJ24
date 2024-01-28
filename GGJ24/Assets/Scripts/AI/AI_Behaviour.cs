@@ -13,6 +13,7 @@ public class AI_Behaviour : MonoBehaviour
     Animator aiAnimator;
 
     public float fleeDistance;
+    public bool tickled = false;
 
     public Vector3 walkPoint;
     bool walkPointSet;
@@ -33,13 +34,20 @@ public class AI_Behaviour : MonoBehaviour
         pointSystem = FindObjectOfType<PointSystem>();
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
 
-        if(!playerInSightRange)
+        if (!tickled)
         {
-            Patrolling();
-        }
-        if(playerInSightRange)
-        {
-            Fleeing();
+            if (!playerInSightRange)
+            {
+                Patrolling();
+            }
+            if (playerInSightRange)
+            {
+                Fleeing();
+            }
+            if (agent.velocity.magnitude < 0.15f)
+            {
+                SearchWalkPoint();
+            }
         }
     }
     private void Patrolling()
@@ -119,12 +127,17 @@ public class AI_Behaviour : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/Woman_base/Woman_Tickle", this.transform.position);
 
         }
-        StartCoroutine(LaughterCycle());
+        tickled = true;
+        if(tickled)
+        {
+            StartCoroutine(LaughterCycle());
+            agent.SetDestination(transform.position);
+        }
     }
     IEnumerator LaughterCycle()
     {
         aiAnimator.SetTrigger("tickled");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         pointSystem.IncreaseScore();
         Destroy(gameObject);
     }

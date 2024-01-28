@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/Audio/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638420428884213106
+  lastModified: 638420480739844192
   FileSizes: []
   Exists: 1
 --- !u!114 &-8586768440746650789
@@ -87,7 +87,7 @@ MonoBehaviour:
   Path: Assets/Audio/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638420428884297205
+  lastModified: 638420480739852128
   FileSizes:
   - Name: 
     Value: 1712
@@ -116,7 +116,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -5301846195776104043}
+  - {fileID: -6445003703395002575}
   MinDistance: 1
   MaxDistance: 20
   Length: 8000
@@ -147,6 +147,54 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4429
+--- !u!114 &-6445003703395002575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/WaterVol
+  m_EditorClassIdentifier: 
+  Name: WaterVol
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2025410585
+    data2: 1227038002
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-5767754845347507579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/WaterVol
+  m_EditorClassIdentifier: 
+  Name: WaterVol
+  StudioPath: parameter:/WaterVol
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2025410585
+    data2: 1227038002
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-5301846195776104043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,12 +383,12 @@ MonoBehaviour:
   EditorParameters:
   - {fileID: 6441395032600634251}
   - {fileID: -550345308123111339}
-  - {fileID: 1033493223866895828}
+  - {fileID: -5767754845347507579}
   MasterBanks:
   - {fileID: -8858282195153995821}
   StringsBanks:
   - {fileID: -7907144728338926290}
-  cacheTime: 638420428884297205
+  cacheTime: 638420480739852128
   cacheVersion: 131616
 --- !u!114 &971423771914294993
 MonoBehaviour:
