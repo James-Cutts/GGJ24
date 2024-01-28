@@ -12,9 +12,12 @@ public class PointSystem : MonoBehaviour
 
     private float timer = 0f;
     public TextMeshProUGUI timerText;
-    private bool isLevelComplete = false;
+    public bool isLevelComplete = false;
 
     private int currentLevelIndex;
+
+    public GameObject finalTime;
+    public TextMeshProUGUI finalTimerText;
 
     private void Start()
     {
@@ -93,11 +96,13 @@ public class PointSystem : MonoBehaviour
             }
         }
 
+        finalTime.SetActive(true);
+
         // Display the total time
         int totalMinutes = Mathf.FloorToInt(totalTime / 60f);
         int totalSeconds = Mathf.FloorToInt(totalTime % 60f);
         int totalMilliseconds = Mathf.FloorToInt((totalTime * 1000f) % 100f);
-        Debug.Log("Total Time: " + string.Format("{0:00}:{1:00}:{2:00}", totalMinutes, totalSeconds, totalMilliseconds));
+        finalTimerText.text = string.Format("{0:00}:{1:00}:{2:00}", totalMinutes, totalSeconds, totalMilliseconds);
     }
 
 }
